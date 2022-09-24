@@ -23,6 +23,7 @@ body {
     padding: 150px;
     background: #fff;
     text-align: center;
+    box-shadow: 3px 10px 20px;
 }
 
 .not_found__page  .not_found__box h1 {
