@@ -3,12 +3,12 @@ import { Formik } from "formik";
 import * as Yup from "yup";
 import { debounce } from "lodash";
 import swal from "sweetalert";
-import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { turnOffLoader, turnOnLoader } from "../../actions/common";
+
 function LoginForm() {
   const listUser = useSelector((state) => state.authenticate.listUser);
-  const navigate = useNavigate();
-  console.log("listUser: ", listUser);
+  const dispatch = useDispatch();
 
   const signinSchema = Yup.object().shape({
     email: Yup.string()
@@ -20,25 +20,32 @@ function LoginForm() {
   });
 
   const handleSubmit = debounce((values, { setSubmitting }) => {
-    const { email = null, password = null } = values;
-    const user = listUser.find(
-      (user) => user.email === email && user.password === password
-    );
-    if (!user) {
-      swal(
-        "Đăng nhập thất bại!",
-        "Tài khoản hoặc mật khẩu của bạn không đúng!",
-        "warning"
+    try {
+      dispatch(turnOnLoader());
+      const { email = null, password = null } = values;
+      const user = listUser.find(
+        (user) => user.email === email && user.password === password
       );
-      return;
+      if (!user) {
+        swal(
+          "Đăng nhập thất bại!",
+          "Tài khoản hoặc mật khẩu của bạn không đúng!",
+          "warning"
+        );
+        return;
+      }
+      localStorage.setItem("Auth:user", user.id);
+      swal({
+        title: "Đăng nhập thành công!",
+        icon: "success",
+      });
+      setSubmitting(false);
+      window.location.href = "/";
+    } catch (error) {
+      console.log('error: ', error);
+    } finally {
+      dispatch(turnOffLoader());
     }
-    localStorage.setItem("Auth:user", user.id);
-    swal({
-      title: "Đăng nhập thành công!",
-      icon: "success",
-    });
-    setSubmitting(false);
-    window.location.href = "/";
   }, 500);
 
   return (
