@@ -61,6 +61,11 @@ body {
     transition: .3s ease-in-out all;
 }
 
+.login__page .form_item button:disabled {
+    opacity: .5;
+    cursor: not-allowed;
+}
+
 .login__page .form_item button:hover {
   background-color: #52c41a;
 }

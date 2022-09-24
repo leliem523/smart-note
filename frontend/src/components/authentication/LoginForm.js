@@ -19,8 +19,9 @@ function LoginForm() {
     password: Yup.string().min(8).max(50).required("Required"),
   });
 
-  const handleSubmit = debounce((values, { setSubmitting }) => {
+  const handleFormSubmit = debounce((values, { setSubmitting }) => {
     try {
+      setSubmitting(true);
       dispatch(turnOnLoader());
       const { email = null, password = null } = values;
       const user = listUser.find(
@@ -39,12 +40,12 @@ function LoginForm() {
         title: "Đăng nhập thành công!",
         icon: "success",
       });
-      setSubmitting(false);
       window.location.href = "/";
     } catch (error) {
       console.log('error: ', error);
     } finally {
       dispatch(turnOffLoader());
+      setSubmitting(false);
     }
   }, 500);
 
@@ -52,7 +53,7 @@ function LoginForm() {
     <Formik
       initialValues={{ email: "", password: "" }}
       validationSchema={signinSchema}
-      onSubmit={handleSubmit}
+      onSubmit={handleFormSubmit}
     >
       {({
         values,
