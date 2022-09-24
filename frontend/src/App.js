@@ -1,9 +1,10 @@
-import "./assets/style/custom.css";
+import "./assets/css/custom.css";
 import { Fragment, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Route, Routes, useNavigate } from "react-router-dom";
 import "./App.css";
 import ListRoutes from "./router";
+import PageNotFound from "./page/common/PageNotFound";
 
 function App() {
   // Check loading
@@ -34,6 +35,7 @@ function App() {
             element={<RouteItem.Component />}
           />
         ))}
+        <Route key="notFoundPage" path="*" element={<PageNotFound />} />
       </Routes>
     </Fragment>
   );
