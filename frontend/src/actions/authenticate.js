@@ -1,6 +1,6 @@
-export const login = (user) => {
+export const register = (user) => {
     return {
-        type: 'USER_LOGIN',
+        type: 'USER_REGISTER',
         payload: user,
     }
 }

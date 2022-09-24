@@ -18,8 +18,17 @@ const initialState = {
   ],
 };
 
-const AuthenticateReducer = (state = initialState, { type, payload }) => {
+const AuthenticateReducer = (state = initialState, {type = null, payload = null}) => {
   switch (type) {
+    case "USER_REGISTER": {
+      const newUser = [...state.listUser];
+      console.log('user moi ne: ', newUser);
+      newUser.push(payload);
+      return {
+        ...state,
+        listUser: newUser,
+      };
+    }
     default: {
       return state;
     }

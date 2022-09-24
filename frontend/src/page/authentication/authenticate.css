@@ -9,39 +9,38 @@ body {
     background: linear-gradient(to left, #030852, #120338, #030852);
 }
 
-.login__page {
+.login__page, .register_page {
   width: 500px;
-  height: 500px;
   margin: 150px auto;
   padding: 20px 50px;
   background-color: #fff;
 }
 
-.login__page_title {
+.title {
     display: block;
     text-align: center;
     padding: 50px 0;
 }
 
-.login__page_title span {
+.title span {
     text-transform: uppercase;
     font-weight: 600;
     font-size: 23px;
 }
 
-.login__page .form_item {
+.form_item {
     display: grid;
    padding: 10px;
     width: 300px;
     margin: 0 auto;
 }
 
-.login__page .form_item label {
+.form_item label {
     letter-spacing: 1px;
     font-size: 18px;
 }
 
-.login__page .form_item input{
+.form_item input{
     padding: 12px 20px;
     width: 100%;
     margin: 8px 0;
@@ -50,7 +49,7 @@ body {
     border: 1px solid #d9d9d9;
 }
 
-.login__page .form_item button {
+.form_item button {
     padding: 12px 20px;
     max-width: 150px;
     background: #389e0d;
@@ -61,11 +60,11 @@ body {
     transition: .3s ease-in-out all;
 }
 
-.login__page .form_item button:disabled {
+.form_item button:disabled {
     opacity: .5;
     cursor: not-allowed;
 }
 
-.login__page .form_item button:hover {
+.form_item button:hover {
   background-color: #52c41a;
 }

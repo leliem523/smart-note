@@ -1,11 +1,11 @@
-import "./login.css";
+import "./authenticate.css";
 import React from "react";
 import LoginForm from "../../components/authentication/LoginForm";
 
 function Login() {
   return (
     <div className="login__page">
-    <div className="login__page_title">
+    <div className="title">
       <span>Đăng nhập</span>
     </div>
       <LoginForm />
