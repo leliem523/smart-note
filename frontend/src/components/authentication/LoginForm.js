@@ -67,7 +67,7 @@ function LoginForm() {
       }) => (
         <form onSubmit={handleSubmit}>
           <div className="form_item">
-            <label htmlFor="email">email</label>
+            <label htmlFor="email">Email</label>
             <input
               type="email"
               name="email"
@@ -78,7 +78,7 @@ function LoginForm() {
             {errors.email && touched.email && errors.email}
           </div>
           <div className="form_item">
-            <label htmlFor="password">password</label>
+            <label htmlFor="password">Password</label>
             <input
               type="password"
               name="password"
