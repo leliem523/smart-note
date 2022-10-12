@@ -1,10 +1,12 @@
+import { DECREMENT_COUNTER, INCREMENT_COUNTER } from "../actions/constants";
+
 const initialState = {
   count: 0,
 };
 
 const counterReducer = (state = initialState, action) => {
   switch (action.type) {
-    case "INCREMENT_COUNTER": {
+    case INCREMENT_COUNTER: {
       const newCount = state.count + 1;
       return {
         ...state,
@@ -12,7 +14,7 @@ const counterReducer = (state = initialState, action) => {
       };
     }
 
-    case "DECREMENT_COUNTER": {
+    case DECREMENT_COUNTER: {
       const newCount = state.count >= 1 ? state.count - 1 : 0;
       return {
         ...state,

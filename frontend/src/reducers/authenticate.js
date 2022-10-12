@@ -1,3 +1,5 @@
+import { USER_REGISTER } from "../actions/constants";
+
 const initialState = {
   listUser: [
     {
@@ -20,7 +22,7 @@ const initialState = {
 
 const AuthenticateReducer = (state = initialState, {type = null, payload = null}) => {
   switch (type) {
-    case "USER_REGISTER": {
+    case USER_REGISTER: {
       const newUser = [...state.listUser];
       console.log('user moi ne: ', newUser);
       newUser.push(payload);

@@ -1,4 +1,4 @@
-import "./authenticate.css";
+import "./authenticate.scss";
 import React from "react";
 import LoginForm from "../../components/authentication/LoginForm";
 

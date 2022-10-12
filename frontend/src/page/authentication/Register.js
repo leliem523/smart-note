@@ -1,4 +1,4 @@
-import './authenticate.css'
+import './authenticate.scss'
 import React from 'react'
 import RegisterForm from '../../components/authentication/RegisterForm'
 

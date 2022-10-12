@@ -1,0 +1,11 @@
+@import "../../assets/css/mixins";
+@import "../../assets/css/variables";
+
+.login__page {
+   @include loginForm($login-color, $login-button-color, $login-button-hover-color);
+}
+
+.register_page  {
+    @include loginForm($register-color, $register-button-color, $register-button-hover-color);
+}
+

@@ -1,8 +1,8 @@
-import "./assets/css/custom.css";
+import "./assets/css/custom.scss";
 import { Fragment, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
-import "./App.css";
+import "./App.scss";
 import ListRoutes from "./router";
 import PageNotFound from "./page/common/PageNotFound";
 
