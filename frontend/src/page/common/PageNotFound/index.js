@@ -1,4 +1,4 @@
-import './common.css';
+import './common.scss';
 import React from 'react';
 import NotFoundLogo from '../../../assets/images/notFound.jpg';
 

@@ -1,6 +1,10 @@
 @import "../../assets/css/mixins";
 @import "../../assets/css/variables";
 
+body {
+    background: linear-gradient(to left, #030852, #120338, #030852);
+  }
+
 .login__page {
    @include loginForm($login-color, $login-button-color, $login-button-hover-color);
 }
