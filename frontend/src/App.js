@@ -1,5 +1,5 @@
 import "./assets/css/custom.scss";
-import { Fragment, useEffect } from "react";
+import { Fragment, lazy, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
 import "./App.scss";
@@ -32,7 +32,11 @@ function App() {
           <Route
             key={`route-item-${RouteItem.key}`}
             path={RouteItem.path}
-            element={<RouteItem.Component />}
+            element={
+              <RouteItem.Layout>
+                <RouteItem.Component />
+              </RouteItem.Layout>
+            }
           />
         ))}
         {isAuthenticate ? (

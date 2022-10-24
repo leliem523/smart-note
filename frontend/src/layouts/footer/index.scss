@@ -1,0 +1,14 @@
+// Variable
+$background-footer: #141E30;
+$color-footer: #00F260;
+
+
+.layout_footer {
+    align-items: center;
+    padding: 30px;
+    background-color: $background-footer;
+    color: $color-footer;
+    font-size: 23px;
+    letter-spacing: 2px;
+    font-style: italic;
+}

@@ -6,6 +6,7 @@ const Router = [
     path: "",
     Component: lazy(() => import("../../page/dashboard")),
     authenticate: true,
+    Layout: lazy(() => import('../../layouts/verticalLayout')),
   },
 ];
 
