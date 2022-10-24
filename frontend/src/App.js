@@ -6,6 +6,9 @@ import "./App.scss";
 import ListRoutes from "./router";
 import PageNotFound from "./page/common/PageNotFound";
 
+// Global style
+import './bootstrap.scss';
+
 function App() {
   // Check loading
   const loader = useSelector((state) => state.common.loader);
