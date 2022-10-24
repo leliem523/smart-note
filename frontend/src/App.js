@@ -1,13 +1,11 @@
-import "./assets/css/custom.scss";
 import { Fragment, lazy, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
-import "./App.scss";
 import ListRoutes from "./router";
 import PageNotFound from "./page/common/PageNotFound";
 
 // Global style
-import './bootstrap.scss';
+import "./assets/css/custom.scss";
 
 function App() {
   // Check loading
